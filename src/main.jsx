@@ -1,10 +1,11 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Container from "./components/Container.jsx";
+import "./style.css";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+// "npm run dev" to test
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+    <Container />
+  </React.StrictMode>
+);
