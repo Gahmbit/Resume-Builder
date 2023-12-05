@@ -1,8 +1,23 @@
 // import React from "react";
 
-function LiveResume({ user, summary, experience1, experience2 }) {
+function LiveResume({
+  user,
+  summary,
+  experience1,
+  experience2,
+  education,
+  projects,
+  skills,
+}) {
   const { fullName, location, phone, email, website } = user;
   const { para, heading } = summary;
+  const { degree, school, notes } = education;
+  const { p1name, p1info, p2name, p2info } = projects;
+  const userSkills = Object.values(skills);
+
+  const skillMap = userSkills.map((skill) => {
+    return skill && <li key={skill}>{skill}</li>;
+  });
 
   return (
     <div className="liveResume">
@@ -44,19 +59,30 @@ function LiveResume({ user, summary, experience1, experience2 }) {
           </h4>
           <p>{experience2.desc}</p>
         </div>
-        {/* NEED TO ADD STATES TO BELOW */}
       </div>
       <div id="education">
         <h1>Education</h1>
         <div className="divider"></div>
-        <h2>Bachelor's Degree in Knowledge</h2>
-        <h3>University of School - May 1999</h3>
-        <h4>Graduated with Honours, 4.1 GPA</h4>
+        <h2>{degree}</h2>
+        <h3>{school}</h3>
+        <h4>{notes}</h4>
+      </div>
+      <div id="projects">
+        <h1>Projects</h1>
+        <div className="divider"></div>
+        <div id="proj1">
+          <h2>{p1name}</h2>
+          <p>{p1info}</p>
+        </div>
+        <div id="proj2">
+          <h2>{p2name}</h2>
+          <p>{p2info}</p>
+        </div>
       </div>
       <div id="skills">
         <h1>Skills</h1>
         <div className="divider"></div>
-        <p>none lol</p>
+        <ul id="skillsList">{skillMap}</ul>
       </div>
     </div>
   );

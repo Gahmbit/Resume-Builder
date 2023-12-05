@@ -196,15 +196,26 @@ div {
 }
 
 .userInputs {
-  width: max-content;
-  height: max-content;
+  width: 700px;
+  height: 900px;
   background-color: var(--khaki);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#contactInput {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .liveResume {
   margin: 1rem 0;
-  width: 695px;
-  height: 900px;
+  width: 180mm;
+  height: 267mm;
   color: var(--isabelline);
   background-color: var(--raisin-black);
   display: flex;
@@ -242,7 +253,8 @@ div {
 #summary,
 #experience,
 #education,
-#skills {
+#skills,
+#projects {
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -254,7 +266,40 @@ div {
 #summary h1,
 #experience h1,
 #education h1,
-#skills h1 {
+#skills h1,
+#projects h1 {
   font-size: 1.25rem;
   letter-spacing: 0.1rem;
+}
+
+#exp1,
+#proj1 {
+  margin-bottom: 0.5rem;
+}
+
+#experience h2,
+#experience h3,
+#education h2,
+#projects h2 {
+  font-size: 1.1rem;
+}
+
+#experience h4,
+#education h4 {
+  font-style: italic;
+}
+
+#skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 1rem; */
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#skillsList > li {
+  width: 33%;
+  list-style: circle;
+  margin-bottom: 1rem;
 }
